@@ -1,0 +1,15 @@
+html {
+  font-size: 100px;
+}
+.fra .a {
+  background-color: pink;
+  font-size: 12px;
+}
+.fra .a::before {
+  content: 'after伪类 在less嵌套中需注意是使用&';
+  display: block;
+}
+.lessCount div {
+  border: 10px solid red;
+  font-size: 0.2rem;
+}

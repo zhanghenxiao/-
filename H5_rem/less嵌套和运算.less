@@ -1,0 +1,32 @@
+// less 定义变量 一定要使用@ ：; 才能有效
+@color: pink;
+@fontSize: 12px;
+@size: 100px;
+
+html {
+  font-size: @size;
+}
+
+.fra {
+  .a {
+    background-color: @color;
+    font-size: @fontSize;
+    // 是看伪元素具体是什么显示模式,整个伪元素都是在a元素的内部显示
+    &::before {
+      content: 'after伪类 在less嵌套中需注意是使用&';
+      display: block;
+      // display: inline-block;s
+    }
+  }
+}
+
+.lessCount{
+  div{
+    // 有三点需要注意的。
+    // 1.运算符中间前后必须要有空格 
+    // 2.只有一个单位以一个单位为准
+    // 3.二个单位时以最前面的单位为准
+    border: 5px + 5 solid red;
+    font-size: 20rem / @size;  //0.2rem  ,1rem = html的font-size
+  }
+}

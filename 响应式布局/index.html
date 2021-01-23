@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Document</title>
+  <!-- 导入bootstrap.min.css  无需引入noma.css 因为已经包含 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9] 解决ie9以下浏览器不识别h5新增标签的问题和不识别媒体查询的问题>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+   
+  </style>
+</head>
+<body>
+  <!-- 结构很关键 每个盒子在不同的尺寸的变化情况,先满足超大屏，大屏，中屏，小屏，超小屏这样的顺序来优化页面  -->
+  <div class="container">
+    <!-- container有默认的padding 加上row之后能抵消container的padding, -->
+    <div class="row">
+      <!-- 列也有默认的padding 我们取消的时候记得权重问题 -->
+      <header class="col-md-2">
+        <div class="logo">
+          <a href="#">
+            <img src="images/logo.png" alt="" class="hidden-xs">
+            <span class="visible-xs">阿里百秀</span>
+          </a> 
+        </div>
+        <!-- 权重不够 样式被bootstrap 覆盖  ，故设个nva class提权 -->
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="glyphicon glyphicon-camera">自然汇</a></li>
+            <li><a href="#" class="glyphicon glyphicon-camera">自然汇</a></li>
+            <li><a href="#" class="glyphicon glyphicon-camera">自然汇</a></li>
+            <li><a href="#" class="glyphicon glyphicon-camera">自然汇</a></li>
+            <li><a href="#" class="glyphicon glyphicon-camera">自然汇</a></li>
+          </ul>
+        </nav>
+      </header>
+      <article class="col-md-7">
+        <!-- 新闻 这里使用的是百分比布局 ul 中5个 小li ,辅助类清除浮动clearfix，这个news没有设高度故产生了浮动 -->
+        <div class="news clearfix" >
+          <ul>
+            <li>
+              <a href="#">
+                <img src="upload/lg.png" alt="">
+                <p>阿里百秀</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="upload/1.jpg" alt="">
+                <p>奇了 成都一小区护卫长得像马云 市民纷纷求合影</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="upload/2.jpg" alt="">
+                <p>奇了 成都一小区护卫长得像马云 市民纷纷求合影</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="upload/3.jpg" alt="">
+                <p>奇了 成都一小区护卫长得像马云 市民纷纷求合影</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="upload/4.jpg" alt="">
+                <p>奇了 成都一小区护卫长得像马云 市民纷纷求合影</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- 观察list盒子在四档中 如何显示变化 我们才能决定如何写 这个很关键 
+          如超小屏 和其他三档显示不一样 我们直接写其他三档通用的 后面再处理超小屏的问题 记得套row -->
+        <div class="list">
+          <div class="row">
+            <div class="col-sm-9">
+              <h3>生活馆 关于指甲的10个健康知识 你知道几个？</h3>
+              <p class="text-muted hidden-xs" >alibaixiu 发布于 2015-11-23</p>
+              <p class="hidden-xs">指甲是经常容易被人们忽略的身体部位， 事实上从指甲的健康状况可以看出一个人的身体健康状况， 快来看看10个暗藏在指甲里知识吧！</p>
+              <p class="text-muted">阅读(2417)评论(1)赞 (18) 
+                <span class="hidden-xs">标签：健康 / 感染 / 指甲 / 疾病 / 皮肤 / 营养 / 趣味生活</span></p>
+            </div>
+            <div class="col-sm-3 pic">
+              <img src="upload/3.jpg" alt="" class="hidden-xs">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              <h3>生活馆 关于指甲的10个健康知识 你知道几个？</h3>
+              <p class="text-muted hidden-xs" >alibaixiu 发布于 2015-11-23</p>
+              <p class="hidden-xs">指甲是经常容易被人们忽略的身体部位， 事实上从指甲的健康状况可以看出一个人的身体健康状况， 快来看看10个暗藏在指甲里知识吧！</p>
+              <p class="text-muted">阅读(2417)评论(1)赞 (18) 
+                <span class="hidden-xs">标签：健康 / 感染 / 指甲 / 疾病 / 皮肤 / 营养 / 趣味生活</span></p>
+            </div>
+            <div class="col-sm-3 pic">
+              <img src="upload/3.jpg" alt="" class="hidden-xs">
+            </div>
+          </div>
+      </article>
+      <aside class="col-md-3">
+        <a href="#" class="zg">
+          <img src="upload/zgboke.jpg" alt="">
+        </a>
+        <a href="#" class="hot">
+          <span class="btn btn-primary">热搜</span>
+          <h4 class="text-primary">欢迎加入中国博客联盟</h4>
+          <p text-muted>这里收录国内各个领域的优秀博客，是一个全人工编辑的开放式博客联盟交流和展示平台......</p>
+      </a>
+      </aside>
+  </div>
+</div>
+</body>
+</html>

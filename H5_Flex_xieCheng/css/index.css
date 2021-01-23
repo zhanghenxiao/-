@@ -1,0 +1,293 @@
+body {
+  max-width: 540px;
+  min-width: 320px;
+  /* 需居中 */
+  margin: 0 auto;
+  font: normal 14px/1.5 Tahoma, "Lucida Grande", Verdana, "Microsoft Yahei", STXihei, hei;
+  color: #000;
+  background: #f2f2f2;
+  /* x轴永远不会出现滚动条 */
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* height: 2000px; */
+}
+/* 大量使用c3 */
+div {
+  box-sizing: border-box;
+}
+/* 莫名其妙有个40px 的padding */
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.search-index {
+  display: flex;
+  /* 固定定位不是相对于父级 而是相当于浏览器 */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  /* 应该有宽度 */
+  width: 100%;
+  height: 44px;
+  /* 设置一个区别 不能无限大 */
+  max-width: 540px;
+  min-width: 320px;
+}
+
+/*1. 自适应  
+2.设置了c3盒子后，高度包含的是内边距与边框，而我们的行高是不包含内边距与边框的，故我们设置了line-height: 26px;后文字会往在居中下面点，设置24px 减掉边框
+*/
+.search {
+  position: relative;
+  flex: 1;
+  height: 26px;
+  line-height: 24px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  margin: 7px 10px;
+  font-size: 12px;
+  padding-left: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+/*设置display: block后会占一行，文字就会被挤下来，使用绝对定位后不占位置设置了定位后有宽和高  */
+.search::after {
+  content: '';
+  /* display: block; */
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background: url(../imags/sprite.png) no-repeat -59px -279px;
+  background-size: 104px auto;
+ 
+}
+
+.user {
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  font-size: 12px;
+}
+/* 这里的场景before在我的上面 after在我的下面  是因为设置了block是块级元素，内容会占一行 */
+.user::before {
+  content: '';
+  display: block;
+  width: 23px;
+  height: 23px;
+  /* sprit图老规矩 设计稿先缩小一半 然后选中你想使用的图看实际的偏移位置  对应在代码中缩小  */
+  background: url(../imags/sprite.png) no-repeat -59px -194px;
+  background-size: 104px auto;
+  margin: 5px auto 0;
+}
+
+/* 使用了固定定位  脱离了文档流 */
+.focus {
+  padding-top: 44px;
+}
+.focus img {
+  width: 100%;
+}
+
+.local-nav {
+  display: flex;
+  height: 64px;
+  margin: 3px 4px;
+  background-color: #fff;
+}
+
+.local-nav li{  
+  flex: 1;
+  margin-top: 8px;
+}
+/* flex 经典布局 */
+.local-nav a {
+  display: flex;
+  /* 切换主轴为y轴 */
+  flex-direction: column;
+  /* 主轴单行元素居中 */
+  align-items: center;
+  font-size: 12px;
+} 
+/* 给父级设置flex span直接具备宽和高
+属性选择器解决多个样式重复 提取公共样式 */
+.local-nav li [class^='nav-icon'] {
+  width: 32px;
+  height: 32px;
+  background: url(../imags/localnav_bg.png) no-repeat 0 0;
+  background-size: 32px auto;
+}
+
+.local-nav li .nav-icon-icon2 {
+  background-position: 0 -32px;
+}
+.local-nav li .nav-icon-icon3 {
+  background-position: 0 -64px;
+}
+.local-nav li .nav-icon-icon4 {
+  background-position: 0 -96px;
+}
+.local-nav li .nav-icon-icon5 {
+  background-position: 0 -128px;
+}
+
+nav {
+  border-radius: 5px;
+  background-color: pink;
+  margin: 4px;
+  overflow: hidden;
+}
+
+nav .common {
+  display: flex;
+   height: 88px;
+}
+nav .common div{
+  flex: 1;
+}
+
+/* -n+2 是前面2个 使用了3c盒子故没有挤下来 */
+nav .common .two:nth-child(-n+2){
+  border-right: 1px solid #fff;
+}
+nav .common:nth-child(-n+2) {
+  border-bottom: 3px solid #fff;
+}
+
+.two{
+  display: flex;
+  flex-direction: column;
+  
+}
+.two a {
+  flex: 1;
+  color: #fff;
+  font-size: 12px;
+  /* 整个高度是88px 分二份就是44px */
+  line-height: 44px;
+  text-align: center;
+  /* 文字影映 */
+  -webkit-text-shadow: rgba(0, 0, 0, .2);
+  
+}
+.two a:nth-child(1) {
+  border-bottom: 1px solid #fff;
+}
+.common .two:nth-child(1) a{
+  border: none;
+  /* 下中通过bottom center 移动到中下 */
+  background: url(../imags/hotel.png) no-repeat bottom center;
+  background-size: 121px auto;
+}
+.common:nth-child(1) {
+  background: -webkit-linear-gradient(left, #FA5A55, #FA994D);
+}
+.common:nth-child(2) {
+  background: -webkit-linear-gradient(left, #4B90ED, #53BCED);
+}
+  .common:nth-child(3) {
+  background: -webkit-linear-gradient(left, #34C2A9, #6CD559);
+}
+
+.production {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4px;
+  background-color: #fff;
+  /* border-radius: 5px; */
+}
+/* flex也可设置20% 需要与flex-warp:warp搭配 */
+.production li {
+  /* flex: 1; */
+  flex: 20%;
+  margin: 5px;
+}
+.common-pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon {
+  width: 28px;
+  height: 28px;
+  background: url(../imags/subnav-bg.png) no-repeat;
+  background-size: 28px auto;
+}
+
+.hot {
+  background-color: #fff;
+  margin: 4px;
+  border-radius: 5px;
+}
+.hd {
+  height: 44px;
+  /* background-color: rebeccapurple; */
+  position: relative;
+  /* line-height: 44px; */
+  margin: 0;
+}
+/* 去掉热门活动字样！！！，这里为了做seo才会使用h2 */
+.hd h2 {
+  text-indent: -999px;
+  overflow: hidden;
+  margin: 0;
+}
+/* after 和before 都可以使用 */
+.hd h2::after {
+  content: '';
+  position: absolute;
+  top: 13px;
+  left: 8px;
+  width: 79px;
+  height: 15px;
+  background: url(../imags/hot.png) no-repeat 0 -20px;
+  background-size: 79px auto;
+}
+.hd a{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 15px;
+  background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
+  padding: 3px 20px 3px 10px;
+  font-size: 12px;
+  color: #fff;
+}
+/* 使用了定位直接拥有 高和宽 */
+.hd a::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 7px;
+  height: 7px;
+  /* 使用c3新特性2D转换，旋转 */
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+}
+.row {
+  display: flex;
+}
+.row a {
+  flex: 1;
+}
+.row a img{
+  width: 100%;
+}
+.row a:nth-child(1) {
+  border-right: 1px solid #ccc;
+}
+.row a:nth-child(-n+2) {
+  border-bottom: 1px solid #ccc;
+}

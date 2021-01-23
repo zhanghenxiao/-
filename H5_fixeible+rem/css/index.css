@@ -1,0 +1,64 @@
+body {
+  min-width: 320px;
+  /* 我们的设计稿是750px */
+  width: 750px;
+  /* flexible平均把页面划成10等分 每一份是75px 然后我们苏宁的设计稿是750px ,750 / 75 = 10故width 修改成10rem */
+  width: 10rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: Arial, Helvetica;
+  background: #f2f2f2;
+}
+
+/* 有个问题就是 页面大于750的时候我们怎么办？  我们需要统一按照750px 设计稿的大小来处理 */
+/* 注意写法我顶 */
+@media screen and (min-width:750px){
+  html {
+    font-size: 75px!important;
+  }
+}
+
+
+.search-content {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 1.173333rem;
+  background-color: pink;
+}
+
+.search-content .classity {
+  width: .586667rem;
+  height: .933333rem;
+  margin: .146667rem .333333rem .133333rem;
+  /* background: url(../images/classify.png) no-repeat;
+  background-size: .586667rem .933333rem; */
+}
+.classity img {
+  width: 100%;
+}
+
+.login {
+  width: .586667rem;
+  height: .933333rem;
+  margin: .133333rem;
+  line-height: .933333rem;
+}
+.login img {
+  width: 100%;
+}
+
+.search {
+  flex: 1;
+}
+.search input {
+  border: 0;
+  outline: none;
+  width: 100%;
+  height: .933333rem;
+  margin-top: .266667rem;
+  font-size: .266667rem;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 移动端的开发 首先要做的就是先技术选型（百分比，flex, rem，响应式），在书写视口标签及引入默认样式normalize.css -->
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+  <title>Document</title>
+  <!-- 默认样式 -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- 自己的样式 -->
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header class="app">
+    <ul>
+      <li>
+        <!-- 注意这里不能./images或者/images会报图片无法找到。。。 -->
+        <img src="images/close.png" alt="">
+      </li>
+      <li>
+        <img src="images/logo.png" alt="" >
+      </li>
+      <li>打开京东APP，购物更轻松</li>
+      <li>立即打开</li>
+    </ul>
+  </header>
+  <!-- 由于search是自适应 二边是固定的，故search放一个标准流的盒子填充父元素 设置左右margin -->
+  <div class="search-wrap">
+    <div class="search-btn">
+      <!-- 这张图的第一个写法 -->
+      <!-- <img src="images/s-btn.png" alt=""> -->
+    </div>
+    <div class="search">
+      <div class="jd-icon"></div>
+      <div class="sou"></div>
+    </div>
+    <div class="search-login">登录</div>
+  </div>
+  <!-- 主体内容区 -->
+  <div class="main">
+    <!-- 滑动图 -->
+    <div class="slide">
+      <img src="upload/banner.dpg" alt="">
+    </div>
+    <!-- 小家电模块 -->
+    <div class="brand">
+      <div><img src="upload/pic11.dpg" alt=""></div>
+      <div><img src="upload/pic22.dpg" alt=""></div>
+      <div><img src="upload/pic33.dpg" alt=""></div>
+    </div>
+    <!-- 移动导航使用a来做 -->
+    <nav class='clearfix'>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+      <a href="">
+        <img src="upload/nav1.webp" alt="">
+        <span>京东超市</span>
+      </a>
+    </nav>
+    <!-- 新闻模块 -->
+    <div class="news ">
+      <a href="">
+        <img src="upload/new1.dpg" alt="">
+      </a>
+      <a href="">
+        <img src="upload/new2.dpg" alt="">
+      </a>
+      <a href="">
+        <img src="upload/new3.dpg" alt="">
+      </a>
+    </div>
+  </div>
+</body>
+</html>

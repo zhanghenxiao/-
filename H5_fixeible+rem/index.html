@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--引入视口标签  -->
+  <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 引入初始化样式 -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/index.css">
+  <!-- 引入我们的flexible。js -->
+  <script src="js/flexible.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="search-content">
+    <!-- 对于图片又有二种方案处理，都需要保证我们的图片自适应，就是说跟页面的变化而变化，
+    第一种，缩放图片大小马上想法到了背景图片，background-size能缩放图片大小，
+    第二种，插入图片，然后填充父盒子，随着父盒子自适应
+    -->
+    <a href="#" class="classity">
+      <img src="./images/1.png" alt="">
+    </a>
+    <div class="search">
+      <form action="#">
+        <input type="search" value="你好你好">
+      </form>
+    </div>
+    <a href="#" class="login">
+      <img src="./images/2.png" alt="">
+    </a>
+  </div>
+</body>
+</html>
